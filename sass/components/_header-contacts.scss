@@ -1,0 +1,30 @@
+.contacts {
+    @extend %header-list;
+    margin-left: auto;
+}
+
+.contacts__item:not(:last-child) {
+    margin-right: 30px;
+}
+
+.contacts__link {
+    @extend %header-link;
+    color: $main-text-color;
+    transition: fill $animation,
+    color $animation;
+
+    &:hover,
+    &:focus {
+        color: $accent-color;
+    }
+}
+
+.contacts__icon-mail {
+    @include side-sizes (16px, 12px); 
+    margin-right: 10px;
+}
+
+.contacts__icon-phone {
+    @include side-sizes (10px, 16px);
+    margin-right: 10px;
+}

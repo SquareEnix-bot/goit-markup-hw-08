@@ -1,0 +1,41 @@
+.features {
+    &.section {
+        @include section ($padding-bottom: 0)
+    }    
+}
+
+.features__list {
+    @include flex-gap;
+}
+
+.features__item {
+    max-width: 270px;
+}
+
+.features__icons {
+    @include flex-3in1 ($display: inline-flex);    
+    @include side-sizes (100%, 120px);    
+    margin-bottom: 30px;
+    background-color: $third-bg-color;
+    border-radius: 4px;
+}
+
+.features__icon {
+    @include side-sizes (70px, 70px);    
+}
+
+.features__title {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: $title-color;
+}
+
+.features__description {
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+}

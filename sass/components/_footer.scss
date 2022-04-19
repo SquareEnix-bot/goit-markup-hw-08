@@ -1,0 +1,97 @@
+.footer {
+    padding: 60px 0;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: $footer-contacts-color;
+    background-color: $secondary-bg-color;
+}
+
+.footer__flex {
+    &-container {        
+        @include flex-3in1 ($align-items: baseline)
+    }
+
+    &-item:nth-child(1) {
+        margin-right: 70px;
+        width: 231px;
+    }
+
+    &-item:nth-child(2) {
+        margin-right: 93px;
+    }
+}
+
+.footer__logo {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: $main-bg-color;
+}
+
+.address__item:not(:last-child) {
+    margin-bottom: 9px;
+}
+
+.address__link[target] {
+    color: $main-bg-color;
+}
+
+.footer__title {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: $main-bg-color;
+}
+
+.footer__form {
+    display: flex;
+}
+
+.footer__input-email {
+    padding: 14px 16px;
+    margin-right: 12px;
+    width: 358px;
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+    color: $main-bg-color;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    transition: border-color $animation;
+
+    &:hover {
+        border-color: $accent-color;
+    }
+
+    &:focus {
+        outline: none;
+        border-color: $accent-color;
+    }
+
+    &::placeholder {
+        font-size: 16px;
+        line-height: 1.25;
+        letter-spacing: 0.03em;
+        color: rgba(255, 255, 255, 0.6);
+    }
+}
+
+.footer__button {
+    @extend %button;
+    padding: 10px 30px;
+    display: inline-flex;
+    align-items: center;
+
+    &::after {
+        content: '';
+        display: inline-flex;
+        @include side-sizes (24px, 24px);        
+        margin-left: 10px;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 0 0 13.5l7.67 2.84L19.5 5.25l-8.998 12.14.007.002-.009-.002V24l4.301-5.018L20.251 21 24 0Z' fill='%23fff'/%3E%3C/svg%3E");
+    }
+}
+

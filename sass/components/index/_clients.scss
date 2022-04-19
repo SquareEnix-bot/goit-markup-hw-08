@@ -1,0 +1,27 @@
+.clients__title {
+    @extend %section-title;
+}
+
+.clients__list {
+    @include flex-gap;
+}
+
+.clients__link {
+    @include flex-3in1 ($display: inline-flex);
+    @include side-sizes (170px, 92px);    
+    color: $fill-color;
+    border: 1px solid $fill-color;
+    border-radius: 4px;
+    transition: border-color $animation,
+        color $animation;
+
+    &:hover,
+    &:focus {
+        border-color: $accent-color;
+        color: $accent-color;
+    }
+}
+
+.clients__icon {
+    @include side-sizes (106px, 60px);    
+}

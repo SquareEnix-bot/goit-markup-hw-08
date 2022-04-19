@@ -1,0 +1,37 @@
+.socials {
+    @include flex-gap ($gap: 10px);
+}
+
+.socials__link {
+    @include flex-3in1 ($display: inline-flex);
+    @include side-sizes (44px, 44px);    
+    border-radius: 50%;
+    transition: color $animation,
+    background-color $animation;   
+
+    &.footer__socials-link {
+        color: $main-bg-color;
+        background-color: $footer-socials-bg-color;
+        
+        &:hover,
+        &:focus {
+            color: $main-bg-color;
+            background-color: $accent-color;
+        }
+    }
+
+    &.team__socials-link {
+        color: $fill-color;
+        background-color: $main-bg-color;        
+
+        &:hover,
+        &:focus {
+            color: $main-bg-color;
+            background-color: $accent-color;
+        }
+    }
+}
+
+.socials__icon {
+    @include side-sizes (20px, 20px);    
+}

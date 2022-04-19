@@ -1,0 +1,17 @@
+.header {
+    max-height: 80px;
+    border-bottom: 1px solid $header-border-color;
+
+    &>.container {
+        display: flex;
+    }
+
+    &__navigation {
+        @include flex-3in1;
+    }
+    
+    &__contacts {
+        @include flex-3in1;
+    }
+}
+

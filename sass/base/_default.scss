@@ -1,0 +1,65 @@
+body {
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: 400;
+    color: $main-text-color;
+    background-color: $main-bg-color;
+}
+
+h1,
+h2,
+h3,
+p {
+    @extend %zero-indents;
+}
+
+ul {
+    @extend %zero-indents;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+}
+
+address {
+    font-style: normal;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+textarea {
+    resize: none;
+}
+
+.container {
+    @include container (1200px, 15px, 15px);
+}
+
+.section {
+    @include section (94px, 94px);
+}
+
+.visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
