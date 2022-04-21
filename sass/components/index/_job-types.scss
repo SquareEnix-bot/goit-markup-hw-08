@@ -1,3 +1,9 @@
+.job-types {
+    @media screen and (max-width: $desktop-1px) {
+        display: none;
+    }
+}
+
 .job-types__title {
     @extend %section-title;
 }

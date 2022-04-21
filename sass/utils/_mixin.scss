@@ -1,12 +1,5 @@
-@mixin container($max-width, $padding-left, $padding-right) {
-    max-width: $max-width;
-    margin: 0 auto;
-    padding-left: $padding-left;
-    padding-right: $padding-right;
-}
-
 @mixin section ($padding-top: 94px, $padding-bottom: 94px) {
-    padding: $padding-top 0 $padding-bottom;
+    padding: $padding-top 0 $padding-bottom 0;
 }
 
 @mixin flex-3in1 ($display: flex, $align-items: center, $justify-content: center) {

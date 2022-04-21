@@ -1,11 +1,26 @@
 .navigation__logo {
     display: inline-block;
-    margin-right: 93px;
+    margin-right: 88px;
     color: $title-color;
+
+    @media screen and (min-width: $desktop) {
+        margin-right: 93px;
+    }
 }
 
 .navigation__list {
-    @extend %header-list;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+
+    @media screen and (max-width: $tablet-1px) {
+        display: none;
+    }
+
+    @media screen and (min-width: $tablet) {
+        display: flex;
+    }    
 }
 
 .navigation__item:not(:last-child) {
@@ -15,6 +30,8 @@
 .navigation__link {
     @extend %header-link;
     position: relative;
+    padding-top: 32px;
+    padding-bottom: 32px;
     color: $title-color;
 
     &:hover,

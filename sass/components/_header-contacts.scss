@@ -1,10 +1,32 @@
 .contacts {
-    @extend %header-list;
     margin-left: auto;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+
+    @media screen and (max-width: $tablet-1px) {
+        display: none;
+    }    
+
+    @media screen and (min-width: $desktop) {
+        font-size: 14px;
+        line-height: 1.14;
+    }
 }
 
-.contacts__item:not(:last-child) {
-    margin-right: 30px;
+.contacts__item {
+    @media screen and (max-width: $desktop-1px) {
+        &:first-child {
+            margin-bottom: 10px;
+        }
+    }
+
+    @media screen and (min-width: $desktop) {
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
 }
 
 .contacts__link {
@@ -20,11 +42,21 @@
 }
 
 .contacts__icon-mail {
-    @include side-sizes (16px, 12px); 
-    margin-right: 10px;
+    @include side-sizes (14px, 10px); 
+    margin-right: 8px;
+
+    @media screen and (min-width: $desktop) {
+        @include side-sizes (16px, 12px);
+        margin-right: 10px;
+    }
 }
 
 .contacts__icon-phone {
-    @include side-sizes (10px, 16px);
-    margin-right: 10px;
+    @include side-sizes (10px, 14px);
+    margin-right: 8px;
+
+    @media screen and (min-width: $desktop) {
+        @include side-sizes (10px, 16px);
+        margin-right: 10px;
+    }
 }

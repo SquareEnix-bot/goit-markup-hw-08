@@ -1,59 +1,112 @@
 .footer {
-    padding: 60px 0;
+    @include section (60px, 60px);
+    text-align: center;
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
     color: $footer-contacts-color;
     background-color: $secondary-bg-color;
+
+    @media screen and (min-width: $desktop) {
+        text-align: left;
+    }
 }
 
-.footer__flex {
-    &-container {        
-        @include flex-3in1 ($align-items: baseline)
+.footer__flex-container {
+    @media screen and (min-width: $tablet) {
+        @include flex-3in1 ($align-items: baseline);
+        
     }
 
-    &-item:nth-child(1) {
-        margin-right: 70px;
-        width: 231px;
+    @media screen and (min-width: $tablet) and (max-width: $desktop-1px) {
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
 
-    &-item:nth-child(2) {
-        margin-right: 93px;
+    @media screen and (min-width: $desktop) {
+        justify-content: flex-start;
+    }
+}
+
+.footer__flex-item {
+    @media screen and (min-width: $tablet) {
+        &:nth-child(1) {
+            width: 232px;
+        }
+
+        &:nth-child(2) {            
+            width: 206px;
+        }        
+    }
+
+    @media screen and (max-width: $desktop-1px) {
+        &:not(:last-child) {
+            margin-bottom: 60px;
+        }
+
+        &:nth-child(3) {
+            width: 450px;
+        }
+    }
+
+    @media screen and (min-width: $desktop) {
+        &:nth-child(1) {
+            margin-right: 70px;            
+        }
+        
+        &:nth-child(3) {
+            margin-left: auto;            
+        }
     }
 }
 
 .footer__logo {
-    display: inline-block;
+    display: block;      
     margin-bottom: 20px;
     color: $main-bg-color;
+
+    @media screen and (min-width: $desktop) {
+        display: inline-block;
+    }
 }
 
 .address__item:not(:last-child) {
-    margin-bottom: 9px;
+    margin-bottom: 8px;
+
+    @media screen and (min-width: $desktop) {
+        margin-bottom: 9px;
+    }
 }
 
 .address__link[target] {
     color: $main-bg-color;
 }
 
-.footer__title {
-    margin-bottom: 20px;
+.footer__title {    
+    margin-bottom: 20px;    
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    color: $main-bg-color;
+    color: $main-bg-color;    
 }
 
 .footer__form {
-    display: flex;
+    @include flex-3in1;
+
+    @media screen and (max-width: $desktop-1px) {
+        flex-wrap: wrap;
+    }
+
+    @media screen and (min-width: $desktop) {
+        justify-content: flex-start;
+    }
 }
 
-.footer__input-email {
-    padding: 14px 16px;
-    margin-right: 12px;
-    width: 358px;
+.footer__input-email {    
+    padding: 14px 16px;    
+    width: 450px;
     font-size: 16px;
     line-height: 1.25;
     letter-spacing: 0.03em;
@@ -62,6 +115,15 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
     transition: border-color $animation;
+
+    @media screen and (max-width: $desktop-1px) {
+        margin-bottom: 20px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: 358px;
+        margin-right: 12px;
+    }
 
     &:hover {
         border-color: $accent-color;

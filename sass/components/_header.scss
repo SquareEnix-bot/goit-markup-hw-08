@@ -1,17 +1,27 @@
 .header {
-    max-height: 80px;
+    @include flex-3in1($justify-content: flex-start);
+    height: 60px;
     border-bottom: 1px solid $header-border-color;
 
-    &>.container {
-        display: flex;
-    }
 
-    &__navigation {
-        @include flex-3in1;
+    @media screen and (min-width: $tablet) {
+        & {
+            height: 80px;
+        }
+
+        &>.container {
+            @include flex-3in1($justify-content: flex-start);
+        }
+
+        &__navigation {
+            @include flex-3in1($justify-content: flex-start);        
+        }
     }
     
-    &__contacts {
-        @include flex-3in1;
+    @media screen and (min-width: $desktop) {
+        &__contacts {
+            @include flex-3in1;
+        }
     }
 }
 

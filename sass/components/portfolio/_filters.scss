@@ -1,10 +1,16 @@
 .filters {
     @include flex-3in1;
-    margin-bottom: 50px;
-}
+    flex-wrap: wrap;
+    gap: 15px 8px;
+    margin-bottom: 40px;
 
-.filters__item:not(:last-child) {
-    margin-right: 8px;
+    @media screen and (min-width: $tablet) {
+        margin-bottom: 30px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        margin-bottom: 50px;
+    }
 }
 
 .filters__button {

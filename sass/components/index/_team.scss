@@ -7,20 +7,50 @@
 }
 
 .team__list {
-    @include flex-gap;
+    @media screen and (min-width: $tablet) {
+        @include flex-gap;        
+    } 
+
+    @media screen and (min-width: $tablet) and (max-width: $desktop-1px) {
+        flex-wrap: wrap;
+    }
 }
 
 .team__item {
-    padding-bottom: 30px;
-    max-width: 270px;
+    padding-bottom: 24px;
+    width: 100%;
     background-color: $main-bg-color;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
         0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
+
+    @media screen and (max-width: $tablet-1px) {
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }    
+
+    @media screen and (min-width: $tablet) {
+        width: 354px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: 270px;
+        padding-bottom: 30px;
+    }
 }
 
 .team__item-img {
+    height: 460px; // видалити, нормальну картинку поставити
     margin-bottom: 30px;
+
+    @media screen and (min-width: $tablet) {
+        height: 374px; // видалити, нормальну картинку поставити
+    }
+
+    @media screen and (min-width: $desktop) {
+        height: 260px; // видалити, нормальну картинку поставити
+    }
 }
 
 .team__item-title {

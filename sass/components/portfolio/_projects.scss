@@ -1,11 +1,27 @@
-.projects {    
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
+.projects {
+
+    @media screen and (min-width: $tablet) {
+        @include flex-gap($justify-content: flex-start);
+        flex-wrap: wrap;
+    }    
 }
 
 .projects__item {
-    max-width: 370px;
+    width: 450px;
+
+    @media screen and (max-width: $tablet-1px) {
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }    
+
+    @media screen and (min-width: $tablet) {
+        width: 354px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: 370px;
+    }
 }
 
 .projects__link {
@@ -32,7 +48,7 @@
 .projects__overlay {
     position: absolute;
     bottom: 1;
-    min-height: 294px;
+    height: 294px;
     display: flex;
     align-items: center;
     padding: 63px 24px;
@@ -48,11 +64,26 @@
     color: $main-bg-color;
 }
 
+.projects__img {
+    @media screen and (max-width: $tablet-1px) {
+        width: 450px; // видалити потім
+    }
+    
+    @media screen and (min-width: $tablet) and (max-width: $desktop-1px) {
+        width: 354px; // видалити потім
+    }
+}
+
 .projects__text {
+    width: 100%;
     padding: 20px 24px;
     border-right: 1px solid $project-border-color;
     border-bottom: 1px solid $project-border-color;
     border-left: 1px solid $project-border-color;
+
+    @media screen and (min-width: $tablet) and (max-width: $desktop-1px) {
+        height: 147px;
+    }
 }
 
 .projects__title {

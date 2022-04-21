@@ -23,7 +23,7 @@
 %form-border {
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
-    transform: border-color $animation;
+    transition: border-color $animation;
 
     &:hover {
         border-color: $accent-color;
@@ -35,28 +35,29 @@
     }
 }
 
-%header-list {
-    display: flex;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.02em;
-}
-
 %header-link {
     display: inline-flex;
-    align-items: center;
-    padding-top: 32px;
-    padding-bottom: 32px;
+    align-items: center;    
     transition: color $animation;
+
+    @media screen and (min-width: $desktop) {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
 }
 
 %section-title {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     font-weight: 700;
-    font-size: 36px;
-    line-height: 1.16;
+    font-size: 28px;
+    line-height: 1.18;
     text-align: center;
     letter-spacing: 0.03em;
     color: $title-color;
+
+    @media screen and (min-width: $desktop) {
+        margin-bottom: 50px;
+        font-size: 36px;
+        line-height: 1.16;
+    }
 }
