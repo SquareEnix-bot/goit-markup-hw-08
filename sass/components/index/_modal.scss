@@ -3,12 +3,13 @@
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
+    left: 0;    
     background:$backdrop-bg-color;
     z-index: 999;
     visibility: hidden;
     opacity: 0;
-    transition: $animation-modal;
+    overflow-y: scroll;
+    transition: $animation-modal;    
 
     &-active {
         visibility: visible;
@@ -18,9 +19,14 @@
 }
 
 .modal {
+    @media screen and (max-width: $mobile-1px) {
+        max-width: calc(100vw - 30px);
+        padding: 40px 15px;
+    }    
+
     position: absolute;
     top: -1000px;
-    left: 50%;
+    left: 50%;    
     width: 450px;
     padding: 40px;
     background-color: $main-bg-color;
@@ -29,7 +35,7 @@
     border-radius: 4px;
     z-index: 1000;
     visibility: hidden;
-    opacity: 0;
+    opacity: 0;    
     transform: translate(-50%, 0);
     transition: $animation-modal;
 
@@ -71,9 +77,7 @@
     &:hover,
     &:focus {
         transform: rotate(360deg);
-    }
-
-    
+    }    
 }
 
 .modal__close-icon {

@@ -7,7 +7,7 @@
 }
 
 .projects__item {
-    width: 450px;
+    max-width: 450px;
 
     @media screen and (max-width: $tablet-1px) {
         &:not(:last-child) {
@@ -55,6 +55,11 @@
     background-color: $projects-overlay-bg-color;
     transform: translateY(0);
     transition: transform $animation;
+
+    @media screen and (max-width: 360px) {
+        height: 235px;
+        padding: 33px 24px;
+    }
 }
 
 .projects__overlay-text {
@@ -62,6 +67,10 @@
     line-height: 1.56;
     letter-spacing: 0.03em;
     color: $main-bg-color;
+
+    @media screen and (max-width: 360px) {
+        font-size: 14px;
+    }
 }
 
 .projects__img {
@@ -80,6 +89,10 @@
     border-right: 1px solid $project-border-color;
     border-bottom: 1px solid $project-border-color;
     border-left: 1px solid $project-border-color;
+
+    @media screen and (max-width: 400px) {
+        height: 147px;
+    }
 
     @media screen and (min-width: $tablet) and (max-width: $desktop-1px) {
         height: 147px;

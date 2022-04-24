@@ -1,0 +1,72 @@
+.menu__button {    
+    @extend %zero-indents;
+    display: inline-flex;
+    margin-left: auto;
+    z-index: 900;
+    background-color: transparent;  
+    transition: fill $animation;
+    
+    &:hover,
+    &:focus {        
+        fill: $accent-color;
+    }
+
+    @media screen and (min-width: $tablet-1px) {
+        display: none;
+    }
+}
+
+.menu__button-icon {
+    @include side-sizes(40px, 40px);
+}
+
+.menu__button-icon-open {
+    visibility: visible;
+    opacity: 1;
+
+    .menu__button.menu__button--active & {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+.menu__button-icon-close {
+    .menu__button.menu__button--active & {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .menu__button & {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+.menu__container {
+    @include flex-3in1($justify-content: end);   
+    flex-grow: 1;    
+    
+    @media screen and (max-width: $tablet-1px) {
+        position: absolute;
+        top: -100vh;
+        left: 0;
+        @include side-sizes(100vw, 100vh);
+        z-index: 888;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 48px 40px;
+        background: $main-bg-color;
+        visibility: hidden;
+        opacity: 0;
+        transition: $animation-modal;
+
+        &--active {
+            top: 0;
+            visibility: visible;
+            opacity: 1;
+            pointer-events: initial;
+        }
+    }
+
+    
+}

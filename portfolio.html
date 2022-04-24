@@ -17,45 +17,71 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
         
     <link rel="stylesheet" href="./css/main.min.css">
+
+    <script defer src="./js/mobile-menu.js"></script>
 </head>
 
 <body>
     <header class="header">
         <div class="container">
-            <nav class="header__navigation navigation">
-                <a class="navigation__logo logo" href="./index.html">
+            <nav class="header__menu menu">
+                <a class="header__logo logo" href="./index.html">
                     <span class="logo logo--accent">Web</span>Studio
                 </a>
-                <ul class="navigation__list">
-                    <li class="navigation__item">
-                        <a class="navigation__link" href="./index.html">Студія</a>
-                    </li>
-                    <li class="navigation__item">
-                        <a class="navigation__link navigation__link--current" href="./portfolio.html">Портфоліо</a>
-                    </li>
-                    <li class="navigation__item">
-                        <a class="navigation__link" href="#">Контакти</a>
-                    </li>
-                </ul>
+                <button class="menu__button" data-menu-button type="button" aria-expanded="false"
+                    aria-controls="menu__container" aria-label="кнопка мобільного меню">
+                    <svg class="menu__button-icon">
+                        <use class="menu__button-icon-open" href="./images/icons.svg#open-menu"></use>
+                        <use class="menu__button-icon-close" href="./images/icons.svg#close-menu"></use>
+                    </svg>
+                </button>
+                <div class="menu__container" id="menu__container" data-menu>
+                    <ul class="header__navigation navigation">
+                        <li class="navigation__item">
+                            <a class="navigation__link" href="./index.html">Студія</a>
+                        </li>
+                        <li class="navigation__item">
+                            <a class="navigation__link navigation__link--current" href="./portfolio.html">Портфоліо</a>
+                        </li>
+                        <li class="navigation__item">
+                            <a class="navigation__link" href="#">Контакти</a>
+                        </li>
+                    </ul>
+                    <ul class="header__contacts contacts">
+                        <li class="contacts__item contacts__item_mail">
+                            <a class="contacts__link" href="mailto:info@devstudio.com">
+                                <svg class="contacts__icon-mail">
+                                    <use href="./images/icons.svg#mail"></use>
+                                </svg>
+                                <span>info@devstudio.com</span>
+                            </a>
+                        </li>
+                        <li class="contacts__item contacts__item_phone">
+                            <a class="contacts__link" href="tel:+380961111111">
+                                <svg class="contacts__icon-phone">
+                                    <use href="./images/icons.svg#smartphone"></use>
+                                </svg>
+                                <span>+38 096 111 11 11</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="header__socials">
+                        <li class="header__socials-item">
+                            <a class="header__socials-link" href="#">Instagram</a>
+                        </li>
+                        <li class="header__socials-item">
+                            <a class="header__socials-link" href="#">Twitter</a>
+                        </li>
+                        <li class="header__socials-item">
+                            <a class="header__socials-link" href="#">Facebook</a>
+                        </li>
+                        <li class="header__socials-item">
+                            <a class="header__socials-link" href="#">LinkedIn</a>
+                        </li>
+                    </ul>
+                </div>
+    
             </nav>
-            <ul class="header__contacts contacts">
-                <li class="contacts__item contacts__item_mail">
-                    <a class="contacts__link" href="mailto:info@devstudio.com">
-                        <svg class="contacts__icon-mail">
-                            <use href="./images/icons.svg#mail"></use>
-                        </svg>
-                        <span>info@devstudio.com</span>
-                    </a>
-                </li>
-                <li class="contacts__item contacts__item_phone">
-                    <a class="contacts__link" href="tel:+380961111111">
-                        <svg class="contacts__icon-phone">
-                            <use href="./images/icons.svg#smartphone"></use>
-                        </svg>
-                        <span>+38 096 111 11 11</span>                        
-                    </a>
-                </li>
-            </ul>
         </div>
     </header>
 
@@ -65,19 +91,19 @@
                 <h1 class="visually-hidden">Наші роботи</h1>
                 <ul class="filters">
                     <li class="filters__item">
-                        <button class="filters__button" type="button">Усе</button>
+                        <button class="filters__button" aria-label="кнопка сортування Усе" type="button">Усе</button>
                     </li>
                     <li class="filters__item">
-                        <button class="filters__button" type="button">Веб-сайти</button>
+                        <button class="filters__button" aria-label="кнопка сортування Веб-сайти" type="button">Веб-сайти</button>
                     </li>
                     <li class="filters__item">
-                        <button class="filters__button" type="button">Додатки</button>
+                        <button class="filters__button" aria-label="кнопка сортування Додатки" type="button">Додатки</button>
                     </li>
                     <li class="filters__item">
-                        <button class="filters__button" type="button">Дизайн</button>
+                        <button class="filters__button" aria-label="кнопка сортування Дизайн" type="button">Дизайн</button>
                     </li>
                     <li class="filters__item">
-                        <button class="filters__button" type="button">Маркетинг</button>
+                        <button class="filters__button" aria-label="кнопка сортування Маркетинг" type="button">Маркетинг</button>
                     </li>
                 </ul>
                 <ul class="projects">
@@ -286,7 +312,8 @@
                 <form class="footer__form js-speaker-form" name="subscribe-form">
                     <input class="footer__input-email" type="email" name="subscribe-email" autocomplete="email"
                         placeholder="E-mail">
-                    <button class="footer__button button" type="submit">Підписатися</button>
+                    <button class="footer__button button" aria-label="кнопка підпису на розсилку"
+                        type="submit">Підписатися</button>
                 </form>
             </div>
         </div>

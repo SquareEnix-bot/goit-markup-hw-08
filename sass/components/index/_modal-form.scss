@@ -55,6 +55,10 @@
 }
 
 .form__label-checkbox {
+    @media screen and (max-width: $mobile) {
+        max-width: calc(100% - 24px);
+    }
+
     margin-left: 8px;
     font-size: 12px;
     line-height: 1.17;

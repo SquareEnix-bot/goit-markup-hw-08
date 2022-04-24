@@ -1,38 +1,36 @@
-.navigation__logo {
-    display: inline-block;
-    margin-right: 88px;
-    color: $title-color;
+.navigation { 
+    @media screen and (min-width: $tablet) {
+        display: flex;
+        margin-right: 84px;
+    }    
 
     @media screen and (min-width: $desktop) {
-        margin-right: 93px;
+        margin-right: 305px;
     }
 }
 
-.navigation__list {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.02em;
-
+.navigation__item {    
     @media screen and (max-width: $tablet-1px) {
-        display: none;
-    }
+        &:not(:last-child) {
+            margin-bottom: 32px;
+        }        
+    }  
 
     @media screen and (min-width: $tablet) {
-        display: flex;
+        &:not(:last-child) {
+            margin-right: 50px;
+        }    
     }    
 }
 
-.navigation__item:not(:last-child) {
-    margin-right: 50px;
-}
-
-.navigation__link {
-    @extend %header-link;
-    position: relative;
-    padding-top: 32px;
-    padding-bottom: 32px;
+.navigation__link {    
+    display: inline-flex;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.175;
+    letter-spacing: 0.02em;    
     color: $title-color;
+    transition: color $animation;
 
     &:hover,
     &:focus,
@@ -40,25 +38,33 @@
         color: $accent-color;
     }
 
-    &::after {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        content: '';
-        display: inline-flex;
-        @include side-sizes (100%, 4px);        
-        background-color: $accent-color;
-        border-radius: 2px;
-        transform: scale(0);
-        opacity: 0;
-        transition: transform $animation,
-            opacity $animation;
-    }
+    @media screen and (min-width: $tablet) {
+    font-size: 14px;
+    line-height: 1.14;        
+    position: relative;
+    padding-top: 32px;
+    padding-bottom: 32px;
 
-    &--current::after,
-    &:hover::after,
-    &:focus::after {
-        transform: scale(1);
-        opacity: 1;
-    }
+        &::after {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            content: '';
+            display: inline-flex;
+            @include side-sizes (100%, 4px);
+            background-color: $accent-color;
+            border-radius: 2px;
+            transform: scale(0);
+            opacity: 0;
+            transition: transform $animation,
+                opacity $animation;
+        }
+
+        &--current::after,
+        &:hover::after,
+        &:focus::after {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }   
 }

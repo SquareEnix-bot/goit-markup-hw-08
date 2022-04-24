@@ -1,4 +1,5 @@
 .logo {
+    display: inline-flex;
     font-family: $secondary-font;
     font-weight: 700;
     font-size: 24px;
@@ -12,5 +13,19 @@
     @media screen and (min-width: $desktop) {
         font-size: 26px;
         line-height: 1.19;
+    }
+}
+
+.header__logo {    
+    color: $title-color;    
+}
+
+.footer__logo {
+    display: block;
+    margin-bottom: 20px;
+    color: $main-bg-color;
+
+    @media screen and (min-width: $desktop) {
+        display: inline-flex;
     }
 }
