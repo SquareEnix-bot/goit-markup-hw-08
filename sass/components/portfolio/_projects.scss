@@ -40,25 +40,40 @@
     }
 }
 
-.projects__thumb {
+.projects__thumb {    
     position: relative;
     overflow: hidden;
 }
 
 .projects__overlay {
+    @media screen and (max-width: 350px) {
+        height: 189px;             
+    }   
+
+    @media screen and (min-width: 351px) and (max-width: 400px) {
+        height: 222px;                
+    }
+
+    @media screen and (min-width: 401px) and (max-width: 440px) {
+        height: 242px;
+    }
+
+    @media screen and (min-width: 441px) and (max-width: $mobile-1px) {
+        height: 268px;
+    }
+
     position: absolute;
-    bottom: 1;
-    height: 294px;
+    bottom: -100%;       
     display: flex;
-    align-items: center;
-    padding: 63px 24px;
+    align-items: center;  
+    padding: 13px 24px;
     background-color: $projects-overlay-bg-color;
     transform: translateY(0);
     transition: transform $animation;
 
-    @media screen and (max-width: 360px) {
-        height: 235px;
-        padding: 33px 24px;
+    @media screen and (min-width: 480px) {
+        height: 294px;
+        padding: 63px 24px;
     }
 }
 
@@ -68,18 +83,8 @@
     letter-spacing: 0.03em;
     color: $main-bg-color;
 
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 480px) {
         font-size: 14px;
-    }
-}
-
-.projects__img {
-    @media screen and (max-width: $tablet-1px) {
-        width: 450px; // видалити потім
-    }
-    
-    @media screen and (min-width: $tablet) and (max-width: $desktop-1px) {
-        width: 354px; // видалити потім
     }
 }
 

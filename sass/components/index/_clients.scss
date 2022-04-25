@@ -10,21 +10,29 @@
     }    
 }
 
-.clients__link {
-    @include flex-3in1 ($display: inline-flex);
-    @include side-sizes (210px, 92px);    
+.clients__link {    
+    @media screen and (max-width: $mobile-1px) {
+        width: 115px;
+    }
+
+    @include flex-3in1 ($display: inline-flex);  
+    height: 92px;       
     color: $fill-color;
     border: 1px solid $fill-color;
     border-radius: 4px;
     transition: border-color $animation,
         color $animation;
 
+    @media screen and (min-width: $mobile) {
+        width: 210px;
+    }
+
     @media screen and (min-width: $tablet) {
-        @include side-sizes (226px, 92px);
+        width: 226px;
     }
 
     @media screen and (min-width: $desktop) {
-        @include side-sizes (170px, 92px);
+        width: 170px;
     }
 
     &:hover,
