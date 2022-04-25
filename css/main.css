@@ -1539,6 +1539,12 @@ textarea {
   overflow: hidden;
 }
 
+@media screen and (min-width: 480px) {
+  .projects__img {
+    height: 294px;
+  }
+}
+
 .projects__overlay {
   position: absolute;
   bottom: -100%;

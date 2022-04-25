@@ -42,7 +42,13 @@
 
 .projects__thumb {    
     position: relative;
-    overflow: hidden;
+    overflow: hidden;    
+}
+
+.projects__img {
+    @media screen and (min-width: $mobile) {
+        height: 294px;
+    }    
 }
 
 .projects__overlay {
