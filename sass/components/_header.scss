@@ -1,10 +1,19 @@
-.header {
+.header {    
+    @media screen and (max-width: $tablet-1px) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 600;
+    }
+
     @include flex-3in1($justify-content: flex-start);
     height: 60px;
+    background-color: $main-bg-color;
     border-bottom: 1px solid $header-border-color;    
 
-    &>.container {
-        min-width: 320px;
+    &>.container {        
+        min-width: 320px;         
     }
 
     @media screen and (min-width: $tablet) {
@@ -13,7 +22,7 @@
 }
 
 .header__menu {    
-    @include flex-3in1($justify-content: space-between);
+    @include flex-3in1($justify-content: space-between);        
 }
 
 .header__contacts {

@@ -37,8 +37,11 @@
 }
 
 .form__textarea {
-    @extend %form-border;
-    height: 120px;
+    @media screen and (min-width: $mobile) {
+        height: 120px;
+    }
+
+    @extend %form-border;    
     padding: 12px 16px;    
 
     &::placeholder {

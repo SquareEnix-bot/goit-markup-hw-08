@@ -5,9 +5,11 @@
     menuBtnRef.addEventListener("click", () => {
         const expanded = menuBtnRef.getAttribute("aria-expanded") === "true" || false;
         
+        document.body.classList.toggle("overflow-hidden");
+
         menuBtnRef.classList.toggle("menu__button--active");
         menuBtnRef.setAttribute("aria-expanded", !expanded);
 
-        mobileMenuRef.classList.toggle("menu__container--active");
+        mobileMenuRef.classList.toggle("menu__container--active");        
     });
 })();

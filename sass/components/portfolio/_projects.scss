@@ -1,5 +1,4 @@
 .projects {
-
     @media screen and (min-width: $tablet) {
         @include flex-gap($justify-content: flex-start);
         flex-wrap: wrap;
@@ -25,7 +24,9 @@
 }
 
 .projects__link {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    height: 100%;    
     transition: box-shadow $animation;
 
     &:hover,
@@ -40,15 +41,9 @@
     }
 }
 
-.projects__thumb {    
+.projects__thumb {        
     position: relative;
     overflow: hidden;    
-}
-
-.projects__img {
-    @media screen and (min-width: $mobile) {
-        height: 294px;
-    }    
 }
 
 .projects__overlay {        
@@ -78,23 +73,16 @@
     }
 }
 
-.projects__text {
+.projects__text {   
+    flex-grow: 1;
     width: 100%;
     padding: 20px 24px;
     border-right: 1px solid $project-border-color;
     border-bottom: 1px solid $project-border-color;
-    border-left: 1px solid $project-border-color;
-
-    @media screen and (max-width: 400px) {
-        height: 147px;
-    }
-
-    @media screen and (min-width: $tablet) and (max-width: $desktop-1px) {
-        height: 147px;
-    }
+    border-left: 1px solid $project-border-color;   
 }
 
-.projects__title {
+.projects__title {    
     margin-bottom: 4px;
     font-weight: 700;
     font-size: 18px;
@@ -103,7 +91,7 @@
     color: $title-color;
 }
 
-.projects__subtitle {
+.projects__subtitle {    
     font-size: 16px;
     line-height: 1.87;
     letter-spacing: 0.03em;

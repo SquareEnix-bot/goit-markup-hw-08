@@ -1,13 +1,13 @@
-.menu__button {    
+.menu__button {
     @extend %zero-indents;
     display: inline-flex;
     margin-left: auto;
     z-index: 900;
-    background-color: transparent;  
+    background-color: transparent;
     transition: fill $animation;
-    
+
     &:hover,
-    &:focus {        
+    &:focus {
         fill: $accent-color;
     }
 
@@ -43,15 +43,15 @@
 }
 
 .menu__container {
-    @include flex-3in1($justify-content: end);   
-    flex-grow: 1;    
-    
+    @include flex-3in1($justify-content: end);
+    flex-grow: 1;
+
     @media screen and (max-width: $tablet-1px) {
         position: absolute;
         top: -100vh;
         left: 0;
         @include side-sizes(100vw, 100vh);
-        z-index: 888;
+        z-index: 800;
         flex-direction: column;
         align-items: flex-start;
         padding: 48px 40px;
@@ -66,5 +66,5 @@
             opacity: 1;
             pointer-events: initial;
         }
-    }    
+    }
 }

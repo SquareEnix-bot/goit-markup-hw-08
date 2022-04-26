@@ -4,6 +4,10 @@ body {
     font-weight: 400;
     color: $main-text-color;
     background-color: $main-bg-color;
+
+    @media screen and (max-width: $tablet-1px) {
+        padding-top: 60px;
+    }
 }
 
 h1,
